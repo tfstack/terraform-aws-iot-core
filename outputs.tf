@@ -56,7 +56,7 @@ output "rule_names" {
 
 output "endpoint" {
   description = "IoT endpoint"
-  value       = "iot.${data.aws_region.current.id}.amazonaws.com"
+  value       = data.aws_iot_endpoint.current.endpoint_address
 }
 
 output "account_id" {

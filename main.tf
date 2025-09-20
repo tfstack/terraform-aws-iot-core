@@ -7,6 +7,11 @@ data "aws_region" "current" {}
 # Data source for current AWS account ID
 data "aws_caller_identity" "current" {}
 
+# Data source for IoT endpoint
+data "aws_iot_endpoint" "current" {
+  endpoint_type = "iot:Data-ATS"
+}
+
 # IoT Thing Types
 resource "aws_iot_thing_type" "this" {
   for_each = var.thing_types
